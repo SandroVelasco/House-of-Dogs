@@ -1,5 +1,12 @@
+/* Variáveis */
+
+:root {
+  --cor-bg-icon: #ededed;
+  --cor-principal: #0086b3;
+}
+
 /* Html tags */
-* {
+*, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
 }
@@ -10,4 +17,60 @@ html, body {
 
 body {
     font-family: 'Inter', sans-serif;
+}
+
+/* Gerais */
+
+.bg-primario {
+  background: var(--cor-principal);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Buttons */
+
+.btn-action {
+  color: white;
+}
+
+.btn-action:hover {
+  color: white;
+}
+
+/* Index */
+.index-bg {
+  width: 100%;
+  height: 100%;
+
+  background: url("/img/dog-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  padding: 20px;
+  background: white;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.login label {
+  font-size: 0.8rem;
+}
+
+.box-icon {
+  text-align: center;
+}
+
+.box-icon i {
+  background-color: var(--cor-bg-icon);
+  border-radius: 100%;
+  padding: 10px;
+  color: var(--cor-principal);
 }
