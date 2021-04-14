@@ -6,7 +6,7 @@
 }
 
 /* Html tags */
-*, h1, h2, h3, h4, h5, h6, p {
+*, h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -18,6 +18,18 @@ html, body {
 body {
     font-family: 'Inter', sans-serif;
     background-image: url('/img/double-bubble-outline.png');
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, a:hover {
+  color: white;
 }
 
 /* Gerais */
@@ -58,17 +70,6 @@ header i {
 
 /* Sidebar */
 
-.sidebar {
-  position: absolute;
-  top: 0;
-  left: -250px;
-
-  height: 100%;
-  width: 250px;
-  background-color: red;
-  transition: 1s;
-}
-
 .sidebar-all-page {
   position: absolute;
   top: 0;
@@ -78,6 +79,33 @@ header i {
   background-color: black;
   opacity: 0.2;
   display: none;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px;
+
+  height: 100%;
+  width: 250px;
+  background-color: #202831;
+  transition: 1s;
+  color: white;
+}
+
+.sidebar-logo {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar ul {
+  padding: 0 20px;
+}
+
+.sidebar a, .sidebar a:hover {
+  color: #7f8b94;
 }
 
 /* Index */
