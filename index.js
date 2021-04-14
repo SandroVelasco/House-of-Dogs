@@ -1,8 +1,13 @@
 const express = require("express");
 const routes = require("./routes/web");
 const session = require("express-session");
+const FileStore = require('session-file-store')(session);
 
 const app = express();
+
+var fileStoreOptions = {
+  reapInterval: 86400
+};
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -10,11 +15,13 @@ app.use(express.urlencoded({ extended: true }));
 // Configuração da sessão
 app.use(
   session({
+    store: new FileStore(fileStoreOptions),
     secret: "byphZjcFavJH",
+    key: "session",
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 1000 * 86400 * 30 - new Date().getTimezoneOffset() * 1000 * 60, //30 dias de sessão
+      maxAge: 1000 * 86400 * 7,
       httpOnly: true,
       path: "/",
     },
