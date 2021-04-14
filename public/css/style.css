@@ -17,6 +17,7 @@ html, body {
 
 body {
     font-family: 'Inter', sans-serif;
+    background-image: url('/img/double-bubble-outline.png');
 }
 
 /* Gerais */
@@ -38,6 +39,45 @@ body {
 
 .btn-action:hover {
   color: white;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 10px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  background: white;
+}
+
+header i {
+  cursor: pointer;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: -250px;
+
+  height: 100%;
+  width: 250px;
+  background-color: red;
+  transition: 1s;
+}
+
+.sidebar-all-page {
+  position: absolute;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.2;
+  display: none;
 }
 
 /* Index */

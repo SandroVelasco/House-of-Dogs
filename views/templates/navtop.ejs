@@ -1,0 +1,30 @@
+<header>
+  <i class="fas fa-bars"></i>
+  <div>Admin</div>
+</header>
+
+<!-- Sidebar -->
+<div class="sidebar-all-page"></div>
+<div class="sidebar">
+  
+</div>
+
+<script>
+  const sidebar = document.querySelector('.sidebar');
+  const sidebarAllPage = document.querySelector('.sidebar-all-page');
+
+  document.querySelector('header .fa-bars').addEventListener('click', function() {
+
+    sidebar.style.left = "-250px";
+
+    if(sidebar.style.left != 0) {
+      sidebar.style.left = 0;
+      sidebarAllPage.style.display = "block";
+    }
+  });
+
+  document.querySelector('.sidebar-all-page').addEventListener('click', function() {
+    this.style.display = "none";
+    sidebar.style.left = "-250px";
+  })
+</script>
