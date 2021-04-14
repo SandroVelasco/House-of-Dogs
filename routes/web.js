@@ -4,6 +4,7 @@ const router = express.Router();
 const appController = require("./../controllers/AppController");
 const authController = require("./../controllers/AuthController");
 const Middleware = require("./../controllers/Middleware");
+const db = require("./../models/db/db");
 
 /**
  * App Controller
