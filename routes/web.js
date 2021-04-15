@@ -11,6 +11,7 @@ const db = require("./../models/db/db");
  */
 router.get("/", Middleware.sessionCheck, appController.index);
 router.get("/home", Middleware.sessionAppCheck, appController.home);
+router.get("/customer", Middleware.sessionAppCheck, appController.customer);
 
 /**
  * Auth Controller 

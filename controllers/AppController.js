@@ -5,15 +5,27 @@ class AppController {
    * Rota: /
    * Método: GET
    */
-  index(req, res) {    
-    if(req.session.user) {
-      return res.redirect('/home');
+  index(req, res) {
+    if (req.session.user) {
+      return res.redirect("/home");
     }
-    res.render('./../views/index');
+    res.render("./../views/index");
   }
 
+  /**
+   * Rota: /home
+   * Método: GET
+   */
   home(req, res) {
-    res.render('./../views/home');
+    res.render("./../views/home");
+  }
+
+  /**
+   * Rota: /customer
+   * Método: GET
+   */
+  customer(req, res) {
+    res.render("./../views/customer");
   }
 }
 
