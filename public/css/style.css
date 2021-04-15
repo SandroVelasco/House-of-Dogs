@@ -89,7 +89,7 @@ header i {
   height: 100%;
   width: 250px;
   background-color: #202831;
-  transition: 1s;
+  transition: .5s;
   color: white;
 }
 
@@ -102,6 +102,21 @@ header i {
 
 .sidebar ul {
   padding: 0 20px;
+  font-size: 14px;
+}
+
+.sidebar li {
+  color: #7f8b94;
+}
+
+.sidebar i.fas {
+  width: 16px;
+  margin-right: 10px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 0;
 }
 
 .sidebar a, .sidebar a:hover {
