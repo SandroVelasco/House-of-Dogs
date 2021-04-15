@@ -25,4 +25,8 @@ coverage
 # Benchmarking
 benchmarks/graphs
 
+# Env
 .env
+
+# Session
+sessions/

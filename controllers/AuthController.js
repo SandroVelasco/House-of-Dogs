@@ -9,7 +9,7 @@ class AuthController {
     const user = req.body.user;
     const password = req.body.password;
 
-    if(user == "" || password == "") return false;
+    if(user == "" || password == "") return res.redirect("/");
 
     const userMatches = usuarios.find(usuario => usuario.user == user && usuario.password == password);
 

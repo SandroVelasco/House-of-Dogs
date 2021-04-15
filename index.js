@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./routes/web");
 const session = require("express-session");
 const FileStore = require('session-file-store')(session);
+require("dotenv").config();
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     store: new FileStore(fileStoreOptions),
-    secret: "byphZjcFavJH",
+    secret: process.env.SESSION_SECRET,
     key: "session",
     resave: false,
     saveUninitialized: false,
