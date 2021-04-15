@@ -13,5 +13,6 @@ require("dotenv").config();
     queueLimit: 0,
   });
 
+  global.pool = pool;
   console.log("Connected to the database!");
 })();

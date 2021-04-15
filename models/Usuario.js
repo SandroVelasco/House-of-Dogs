@@ -1,8 +1,8 @@
-const usuario = [
-  {
-    user: "admin",
-    password: "123456"
+class Usuario {
+  async getUser(usuario, senha) {
+    const [rows] = await global.pool.query('SELECT * FROM usuarios WHERE usuario = ? AND senha = ?', [usuario, senha]);
+    return rows;
   }
-]
+}
 
-module.exports = usuario;
+module.exports = new Usuario();

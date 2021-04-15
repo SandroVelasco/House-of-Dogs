@@ -1,19 +1,20 @@
-const usuarios = require('./../models/Usuario.js');
+const usuario = require('./../models/Usuario.js');
 
 class AuthController {
   /**
    * Rota: "/login"
    * Método: POST
    */
-   login(req, res) {
+   async login(req, res) {
+    if(!req.body.user || !req.body.password) return res.redirect("/");
+
     const user = req.body.user;
     const password = req.body.password;
 
-    if(user == "" || password == "") return res.redirect("/");
+    // Check if user matches
+    const userMatches = await usuario.getUser(user, password);
 
-    const userMatches = usuarios.find(usuario => usuario.user == user && usuario.password == password);
-
-    if(userMatches) {
+    if(userMatches.length != 0) {
       req.session.user = {
         user: user,
         password: password,
