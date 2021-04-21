@@ -12,7 +12,7 @@ const db = require("./../models/db/db");
 /**
  * Middleware for routes
  */
-router.use([...indexRoutes, ...appRoutes], Middleware.checkSession);
+router.use([...indexRoutes, ...appRoutes, ...authRoutes], Middleware.checkSession);
 
 /**
  * Index Controller
@@ -29,5 +29,6 @@ router.post("/login", AuthController.login);
  */
 router.get("/home", AppController.home);
 router.get("/customer", AppController.customer);
+router.get("/logout", AppController.logout);
 
 module.exports = router;

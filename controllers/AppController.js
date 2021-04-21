@@ -14,11 +14,22 @@ class AppController {
   static customer(req, res) {
     res.render("./../views/customer");
   }
+
+  /**
+   * Rota: /logout
+   * Método: GET
+   */
+  static logout(req, res) {
+    req.session.destroy();
+    res.clearCookie("session")
+    return res.redirect('/');
+  }
 }
 
 appRoutes = [
   '/home',
-  '/customer'
+  '/customer',
+  '/logout'
 ]
 
 module.exports = {
