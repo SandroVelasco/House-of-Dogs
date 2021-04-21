@@ -29,6 +29,7 @@ router.post("/login", AuthController.login);
  */
 router.get("/home", AppController.home);
 router.get("/customer", AppController.customer);
+router.post("/customer/add", AppController.addCustomer);
 router.get("/logout", AppController.logout);
 
 module.exports = router;
