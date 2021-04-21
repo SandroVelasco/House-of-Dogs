@@ -5,7 +5,7 @@ class AuthController {
    * Rota: "/login"
    * Método: POST
    */
-   async login(req, res) {
+   static async login(req, res) {
     if(!req.body.user || !req.body.password) return res.redirect("/");
 
     const user = req.body.user;
@@ -27,4 +27,11 @@ class AuthController {
   }
 }
 
-module.exports = new AuthController();
+const authRoutes = [
+  '/login'
+]
+
+module.exports = {
+  AuthController,
+  authRoutes
+}

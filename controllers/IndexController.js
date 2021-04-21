@@ -1,11 +1,8 @@
 class IndexController {
-  static checkIfIsLogged(req, res, next) {
-    if (indexRoutes.includes(req.path) && req.session.user)
-      return res.redirect("/home");
-    
-    next();
-  }
-
+  /**
+   * Rota: '/' 
+   * Método: GET
+   */
   static index(req, res) {    
     res.render("./../views/index");
   }

@@ -1,20 +1,9 @@
 class AppController {
   /**
-   * Rota: /
-   * Método: GET
-   */
-  index(req, res) {
-    if (req.session.user) {
-      return res.redirect("/home");
-    }
-    res.render("./../views/index");
-  }
-
-  /**
    * Rota: /home
    * Método: GET
    */
-  home(req, res) {
+  static home(req, res) {
     res.render("./../views/home");
   }
 
@@ -22,9 +11,17 @@ class AppController {
    * Rota: /customer
    * Método: GET
    */
-  customer(req, res) {
+  static customer(req, res) {
     res.render("./../views/customer");
   }
 }
 
-module.exports = new AppController();
+appRoutes = [
+  '/home',
+  '/customer'
+]
+
+module.exports = {
+  AppController,
+  appRoutes
+};

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 /* Controllers */
-const appController = require("./../controllers/AppController");
-const authController = require("./../controllers/AuthController");
+const { AppController, appRoutes } = require("./../controllers/AppController");
+const { AuthController, authRoutes } = require("./../controllers/AuthController");
 const { IndexController, indexRoutes } = require("./../controllers/IndexController");
 /* Middleware */
 const Middleware = require("./../controllers/Middleware");
@@ -12,18 +12,22 @@ const db = require("./../models/db/db");
 /**
  * Middleware for routes
  */
-router.use(indexRoutes, IndexController.checkIfIsLogged);
+router.use([...indexRoutes, ...appRoutes], Middleware.checkSession);
 
 /**
- * App Controller
+ * Index Controller
  */
 router.get("/", IndexController.index);
-router.get("/home", Middleware.sessionAppCheck, appController.home);
-router.get("/customer", Middleware.sessionAppCheck, appController.customer);
 
 /**
  * Auth Controller 
  */
-router.post("/login", authController.login);
+router.post("/login", AuthController.login);
+
+/**
+ * App Controller
+ */
+router.get("/home", AppController.home);
+router.get("/customer", AppController.customer);
 
 module.exports = router;
