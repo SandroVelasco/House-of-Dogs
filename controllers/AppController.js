@@ -1,5 +1,3 @@
-const { Store } = require("express-session");
-
 class AppController {
   /**
    * Rota: /
